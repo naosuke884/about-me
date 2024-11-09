@@ -19,10 +19,8 @@
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "**/*": [
-      "eslint --fix",
-      "prettier --write --ignore-unknown"
-    ]
+    "**/*.{ts, tsx, js, jsx}": "eslint --fix",
+    "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "@emotion/cache": "^11.13.1",
