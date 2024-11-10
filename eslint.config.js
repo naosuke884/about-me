@@ -11,7 +11,7 @@ export default [
   pluginReact.configs.flat.recommended,
   eslintConfigPrettier,
   {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ["app/*.{js,mjs,cjs,ts,jsx,tsx}"],
     settings: {
       react: {
         version: "detect",

@@ -26,15 +26,17 @@ export const links: LinksFunction = () => {
 
 export default function App() {
   return (
-    <html>
+    <html className="dark">
       <head>
-        <link rel="icon" href="data:image/x-icon;base64,AA" />
         <Meta />
         <Links />
       </head>
-      <body>
-        <h1 className="bg-red-400">Hello world!</h1>
-        <Button>Click me</Button>
+      <body className="bg-background text-foreground">
+        <h1>Hello world!</h1>
+        <div>
+          <Button>Click me</Button>
+        </div>
+
         <Outlet />
 
         <Scripts />
