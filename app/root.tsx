@@ -1,9 +1,9 @@
 // root.tsx
 import { Links, Meta, Outlet, Scripts } from "@remix-run/react";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import Header from "./header";
 import stylesheet from "@/tailwind.css?url";
-import icon from "@/favicon.ico";
-import { Button } from "@/components/ui/button";
+import favicon from "@/assets/favicon.ico";
 
 export const meta: MetaFunction = () => {
   return [
@@ -18,7 +18,7 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: stylesheet },
     {
       rel: "icon",
-      href: icon,
+      href: favicon,
       type: "image/png",
     },
   ];
@@ -26,17 +26,13 @@ export const links: LinksFunction = () => {
 
 export default function App() {
   return (
-    <html className="dark">
+    <html className="dark w-full h-full">
       <head>
         <Meta />
         <Links />
       </head>
-      <body className="bg-background text-foreground">
-        <h1>Hello world!</h1>
-        <div>
-          <Button>Click me</Button>
-        </div>
-
+      <body className="bg-background text-foreground w-full h-full">
+        <Header />
         <Outlet />
 
         <Scripts />
