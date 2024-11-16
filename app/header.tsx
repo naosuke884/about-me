@@ -16,12 +16,12 @@ export default function App() {
   ];
 
   return (
-    <header className="h-24">
+    <header className="h-24 ring">
       <NavigationMenu className="w-full h-full gap-5">
         <div className="inline-flex justify-center items-center p-5">
           <Link
             to="/"
-            className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+            className="scroll-m-20 text-2xl font-extrabold tracking-tight"
           >
             {" "}
             Hayashi Naoki{" "}
@@ -35,9 +35,8 @@ export default function App() {
                 className={navigationMenuTriggerStyle()}
                 asChild
               >
-                <Link to={item.url} className="text-lg font-semibold">
-                  {" "}
-                  {item.text}{" "}
+                <Link to={item.url} className="text-xl font-semibold">
+                  {item.text}
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
