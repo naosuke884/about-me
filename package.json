@@ -8,6 +8,7 @@
     "preinstall": "npx -y only-allow pnpm",
     "dev": "node ./server.js",
     "start": "cross-env NODE_ENV=production node ./server.js",
+    "build": "pnpm exec remix vite:build",
     "typecheck": "tsc -b",
     "lint": "eslint app/",
     "format": "prettier --write \"./app/**/*.{ts, tsx, js, jsx}\"",
