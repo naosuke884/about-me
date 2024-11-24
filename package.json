@@ -11,8 +11,8 @@
     "build": "remix vite:build",
     "typecheck": "tsc -b",
     "lint": "eslint app/",
-    "format": "prettier --write \"./app/**/*.{ts, tsx, js, jsx}\"",
-    "fix": "eslint app/ --fix && prettier --write \"./app/**/*.{ts, tsx, js, jsx}\"",
+    "format": "prettier --write --ignore-unknown \"**/*.{ts, tsx, js, jsx}\"",
+    "fix": "eslint app/ --fix && prettier --write \"**/*.{ts, tsx, js, jsx}\"",
     "eslint-config-prettier": "eslint-config-prettier ./eslint.config.js ",
     "prepare": "husky"
   },

@@ -1,7 +1,7 @@
 // root.tsx
 import { Links, Meta, Outlet, Scripts } from "@remix-run/react";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
-import Header from "./header";
+import Header from "./Header";
 import stylesheet from "@/tailwind.css?url";
 
 export const meta: MetaFunction = () => {
