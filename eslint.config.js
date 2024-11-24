@@ -11,7 +11,7 @@ export default [
   pluginReact.configs.flat.recommended,
   eslintConfigPrettier,
   {
-    files: ["app/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     settings: {
       react: {
         version: "detect",
@@ -20,6 +20,7 @@ export default [
     rules: {
       "react/jsx-uses-react": "off",
       "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
     },
   },
   { languageOptions: { globals: globals.browser } },

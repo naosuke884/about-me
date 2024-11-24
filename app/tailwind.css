@@ -58,3 +58,15 @@
     --chart-5: 340 75% 55%;
   }
 }
+
+* {
+  @apply font-mono;
+}
+
+h1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+}
+
+p {
+  @apply leading-7 [&:not(:first-child)]:mt-6;
+}

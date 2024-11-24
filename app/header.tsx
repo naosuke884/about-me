@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator";
 export default function App() {
   const navItems = [
     { key: "about", text: "About", url: "/about" },
-    { key: "works", text: "Works", url: "/projects" },
+    { key: "works", text: "Works", url: "/works" },
     { key: "contact", text: "Contact", url: "/contact" },
   ];
 
@@ -20,11 +20,10 @@ export default function App() {
       <NavigationMenu className="w-full h-full gap-5">
         <div className="inline-flex justify-center items-center p-5">
           <Link
-            to="/"
+            to="/about"
             className="scroll-m-20 text-2xl font-extrabold tracking-tight"
           >
-            {" "}
-            Hayashi Naoki{" "}
+            {"Hayashi Naoki"}
           </Link>
         </div>
         <Separator orientation="vertical" />

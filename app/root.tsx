@@ -3,7 +3,6 @@ import { Links, Meta, Outlet, Scripts } from "@remix-run/react";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import Header from "./header";
 import stylesheet from "@/tailwind.css?url";
-import favicon from "@/assets/favicon.ico";
 
 export const meta: MetaFunction = () => {
   return [
@@ -18,7 +17,7 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: stylesheet },
     {
       rel: "icon",
-      href: favicon,
+      href: "/favicon.ico",
       type: "image/png",
     },
   ];
@@ -31,7 +30,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-background text-foreground w-full h-full">
+      <body className="bg-black text-foreground w-full h-full">
         <Header />
         <Outlet />
 
