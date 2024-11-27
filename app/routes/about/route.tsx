@@ -4,7 +4,7 @@ import { GitHubLogo, XLogo, ZennLogo } from "./logos";
 import TimeLine from "./TimeLine";
 
 export default function About() {
-  const Logos = [
+  const logos = [
     {
       key: "github",
       component: <GitHubLogo />,
@@ -34,7 +34,7 @@ export default function About() {
         <h1>Hayashi Naoki</h1>
         <p>{`情報系の学生です\nWebとAIに興味があります\n好きな色は青です`}</p>
         <section className="flex flex-wrap gap-10 justify-center items-center">
-          {Logos.map((logo) => (
+          {logos.map((logo) => (
             <Link
               key={logo.key}
               to={logo.link}
