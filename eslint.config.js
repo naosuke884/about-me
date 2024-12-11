@@ -22,6 +22,15 @@ export default [
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       indent: ["error", 2],
+      // "@typescript-eslint/no-unused-vars": [
+      //   "error",
+      //   {
+      //     "argsIgnorePattern": "^_",
+      //     "varsIgnorePattern": "^_",
+      //     "caughtErrorsIgnorePattern": "^_",
+      //     "destructuredArrayIgnorePattern": "^_"
+      //   }
+      // ]
     },
   },
   { languageOptions: { globals: globals.browser } },
