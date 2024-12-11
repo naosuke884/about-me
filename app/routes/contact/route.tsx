@@ -15,17 +15,26 @@ export async function action({ request }: ActionFunctionArgs) {
   if (submission.status !== "success") {
     return json(submission.reply());
   }
-
+  const { firstName, lastName, email, affiliation, message } = submission.value;
   const resend = new Resend(process.env.RESEND_API_KEY);
+  const to = process.env.RESEND_TO;
+  if (!to) {
+    console.error("RESEND_TO is not set");
+    return json(
+      submission.reply({
+        formErrors: ["Failed to send email"],
+      }),
+    );
+  }
   const { data, error } = await resend.emails.send({
     from: "onboarding@resend.dev",
-    to: "delivered@resend.dev",
+    to: to,
     subject: "Contact Form Submission",
-    html: `<p>First Name: ${submission.value.firstName}</p>
-    <p>Last Name: ${submission.value.lastName}</p>
-    <p>Email: ${submission.value.email}</p>
-    <p>Affiliation: ${submission.value.affiliation}</p>
-    <p>Message: <br />${submission.value.message}</p>`,
+    html: `<p>First Name: ${firstName}</p>
+    <p>Last Name: ${lastName}</p>
+    <p>Email: ${email}</p>
+    <p>Affiliation: ${affiliation}</p>
+    <p>Message: <br />${message}</p>`,
   });
 
   if (error) {
@@ -131,7 +140,11 @@ export default function Contact() {
           <FormMessage message={fields.message.errors} />
         </div>
         <Button disabled={navigation.state !== "idle"}>
-          {navigation.state === "submitting" ? "Submitting..." : "Submit"}
+          {navigation.state === "idle"
+            ? "Submit"
+            : navigation.state === "submitting"
+              ? "Submitting..."
+              : "Loading..."}
         </Button>
       </Form>
       <div className="flex justify-center items-center mt-5">
