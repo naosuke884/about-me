@@ -6,27 +6,20 @@ import {
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { Link } from "@remix-run/react";
-import { Separator } from "@/components/ui/separator";
+import MobileNav from "./HeaderMobileNav";
+import { navItems } from "./headerNavItems";
+import { cn } from "@/lib/utils";
 
 export default function App() {
-  const navItems = [
-    { key: "about", text: "About", url: "/about" },
-    { key: "works", text: "Works", url: "/works" },
-    { key: "contact", text: "Contact", url: "/contact" },
-  ];
-
   return (
-    <header className="h-24 ring">
-      <NavigationMenu className="w-full h-full gap-5">
-        <div className="inline-flex justify-center items-center p-5">
-          <Link
-            to="/about"
-            className="scroll-m-20 text-2xl font-extrabold tracking-tight"
-          >
-            {"Hayashi Naoki"}
-          </Link>
-        </div>
-        <Separator orientation="vertical" />
+    <header className="flex h-24 p-5 ring">
+      <div className="mr-auto flex items-center justify-center">
+        <Link to="/about" className="text-2xl font-extrabold tracking-tight">
+          {"Hayashi Naoki"}
+        </Link>
+      </div>
+      <MobileNav className="sm:hidden" />
+      <NavigationMenu className="hidden sm:block">
         <NavigationMenuList>
           {navItems.map((item) => (
             <NavigationMenuItem key={item.key}>
