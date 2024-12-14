@@ -72,7 +72,7 @@ export default function Contact() {
   };
 
   return (
-    <div>
+    <div className="m-10 flex flex-col items-center justify-center">
       <Form
         action="/contact"
         method="post"
@@ -80,10 +80,10 @@ export default function Contact() {
         onSubmit={form.onSubmit}
         autoComplete="off"
         noValidate
-        className="flex flex-col gap-5 max-w-screen-md mx-auto mt-10 bg-background rounded-lg border-solid border-2 border-border p-10"
+        className="mx-auto flex max-w-screen-md flex-col gap-5 rounded-lg border-2 border-solid border-border bg-background p-10"
       >
         <FormMessage message={form.errors} />
-        <div className="flex gap-5 w-full">
+        <div className="flex w-full gap-5">
           <div className="flex-grow">
             <label>First Name</label>
             <Input
@@ -147,10 +147,10 @@ export default function Contact() {
               : "Loading..."}
         </Button>
       </Form>
-      <div className="flex justify-center items-center mt-5">
+      <div className="mt-5 flex items-center justify-center">
         <p className="text-muted-foreground">OR</p>
       </div>
-      <div className="flex justify-center items-center mt-5">
+      <div className="mt-5 flex items-center justify-center">
         <p>
           <Link
             to={XLink}
