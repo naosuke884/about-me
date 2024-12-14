@@ -83,7 +83,7 @@ export default function Contact() {
         className="mx-auto flex max-w-screen-md flex-col gap-5 rounded-lg border-2 border-solid border-border bg-background p-10"
       >
         <FormMessage message={form.errors} />
-        <div className="flex w-full gap-5">
+        <div className="flex w-full flex-col gap-5 sm:flex-row">
           <div className="flex-grow">
             <label>First Name</label>
             <Input
@@ -139,18 +139,12 @@ export default function Contact() {
           />
           <FormMessage message={fields.message.errors} />
         </div>
-        <Button disabled={navigation.state !== "idle"}>
-          {navigation.state === "idle"
-            ? "Submit"
-            : navigation.state === "submitting"
-              ? "Submitting..."
-              : "Loading..."}
-        </Button>
+        <Button disabled={navigation.state !== "idle"}>{"Submit"}</Button>
       </Form>
-      <div className="mt-5 flex items-center justify-center">
+      <div className="m-5 flex items-center justify-center">
         <p className="text-muted-foreground">OR</p>
       </div>
-      <div className="mt-5 flex items-center justify-center">
+      <div className="m-5 flex items-center justify-center">
         <p>
           <Link
             to={XLink}

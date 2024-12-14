@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "@remix-run/react";
 import {
   NavigationMenu,
@@ -12,10 +11,12 @@ import { cn } from "@/lib/utils";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { navItems } from "./headerNavItems";
 
-export default function MobileNav({ className }: { className: string }) {
-  // TODO: useState 使わなくできる？
-  const [triggerText, setTriggerText] = useState("Menu");
+type MobileNavProps = {
+  className: string;
+  triggerText: string;
+};
 
+export default function MobileNav({ className, triggerText }: MobileNavProps) {
   return (
     <NavigationMenu className={className}>
       <NavigationMenuList>
@@ -34,11 +35,7 @@ export default function MobileNav({ className }: { className: string }) {
                   key={item.key}
                   asChild
                 >
-                  <Link
-                    to={item.url}
-                    className="w-full font-semibold"
-                    onClick={() => setTriggerText(item.text)}
-                  >
+                  <Link to={item.url} className="w-full">
                     {item.text}
                   </Link>
                 </NavigationMenuLink>

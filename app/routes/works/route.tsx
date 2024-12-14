@@ -6,49 +6,49 @@ export function loader() {
   // TODO: url の OGPメタ情報から情報を取得する処理
   const cardContents = [
     {
-      key: "sample1",
+      key: "1",
       title: "Sample",
       description: "sample card sample card sample card sample card",
       url: "https://github.com/naosuke884/about-me/issues",
       img_url: "https://avatars.githubusercontent.com/u/79069890?v=4",
     },
     {
-      key: "sample1",
+      key: "2",
       title: "Sample",
       description: "sample card sample card sample card sample card",
       url: "https://github.com/naosuke884/about-me/issues",
       img_url: "https://avatars.githubusercontent.com/u/79069890?v=4",
     },
     {
-      key: "sample1",
+      key: "3",
       title: "Sample",
       description: "sample card sample card sample card sample card",
       url: "https://github.com/naosuke884/about-me/issues",
       img_url: "https://avatars.githubusercontent.com/u/79069890?v=4",
     },
     {
-      key: "sample1",
+      key: "4",
       title: "Sample",
       description: "sample card sample card sample card sample card",
       url: "https://github.com/naosuke884/about-me/issues",
       img_url: "https://avatars.githubusercontent.com/u/79069890?v=4",
     },
     {
-      key: "sample1",
+      key: "5",
       title: "Sample",
       description: "sample card sample card sample card sample card",
       url: "https://github.com/naosuke884/about-me/issues",
       img_url: "https://avatars.githubusercontent.com/u/79069890?v=4",
     },
     {
-      key: "sample1",
+      key: "6",
       title: "Sample",
       description: "sample card sample card sample card sample card",
       url: "https://github.com/naosuke884/about-me/issues",
       img_url: "https://avatars.githubusercontent.com/u/79069890?v=4",
     },
     {
-      key: "sample1",
+      key: "7",
       title: "Sample",
       description: "sample card sample card sample card sample card",
       url: "https://github.com/naosuke884",
@@ -61,12 +61,12 @@ export function loader() {
 export default function Works() {
   const cardContents = useLoaderData<typeof loader>();
   return (
-    <main className="w-full p-10 flex gap-10 flex-wrap justify-center items-center">
+    <main className="flex w-full flex-wrap items-center justify-center gap-10 p-10">
       {cardContents.map((content) => {
         return (
           <WorkCard
             key={content.key}
-            className="w-72 h-72 hover:-translate-y-1 hover:scale-105 duration-300 hover:border-ring"
+            className="h-72 w-72 duration-300 hover:-translate-y-1 hover:scale-105 hover:border-ring"
             url={content.url}
             img_url={content.img_url}
             title={content.title}
