@@ -8,13 +8,13 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-type WorksProps = {
+type WorkProps = {
   title: string;
   description: string;
   url: string;
   img_url: string;
 };
-type WorksCardProps = React.ComponentProps<typeof Card> & WorksProps;
+export type WorkCardProps = React.ComponentProps<typeof Card> & WorkProps;
 
 export default function Works({
   className,
@@ -27,7 +27,7 @@ export default function Works({
   return (
     <>
       <Card
-        className={cn("border-border overflow-hidden", className)}
+        className={cn("overflow-hidden border-border", className)}
         {...props}
       >
         <Link to={url} target="_blank" rel="noopener noreferrer">
@@ -38,7 +38,7 @@ export default function Works({
             </CardDescription>
           </CardHeader>
           <CardContent
-            className={`bg-[url('/avatar.jpg')] bg-cover w-full h-full`}
+            className={`h-full w-full bg-[url('/avatar.jpg')] bg-cover`}
           />
         </Link>
       </Card>

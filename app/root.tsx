@@ -30,6 +30,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
+      {/* google tag >> */}
       <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-FYTY7YPWLQ"
@@ -42,6 +43,7 @@ export default function App() {
         gtag('config', 'G-FYTY7YPWLQ');`,
         }}
       />
+      {/* << google tag */}
       <body className="h-full w-full bg-black text-foreground">
         <Header />
         <Outlet />
