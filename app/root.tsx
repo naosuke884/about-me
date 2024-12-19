@@ -25,12 +25,24 @@ export const links: LinksFunction = () => {
 
 export default function App() {
   return (
-    <html className="dark w-full h-full">
+    <html className="dark h-full w-full">
       <head>
         <Meta />
         <Links />
       </head>
-      <body className="bg-black text-foreground w-full h-full">
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-FYTY7YPWLQ"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FYTY7YPWLQ');`,
+        }}
+      />
+      <body className="h-full w-full bg-black text-foreground">
         <Header />
         <Outlet />
 

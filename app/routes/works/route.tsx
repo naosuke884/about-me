@@ -66,7 +66,7 @@ export default function Works() {
         return (
           <WorkCard
             key={content.key}
-            className="h-72 w-72 duration-300 hover:-translate-y-1 hover:scale-105 hover:border-ring"
+            className="h-72 w-72 duration-300 sm:hover:-translate-y-1 sm:hover:scale-105 sm:hover:border-ring"
             url={content.url}
             img_url={content.img_url}
             title={content.title}
