@@ -1,12 +1,12 @@
-import type { ActionFunctionArgs } from "@remix-run/node";
-import { Form, useActionData, useNavigation, Link } from "@remix-run/react";
-import { redirect, json } from "@remix-run/node";
-import { parseWithZod } from "@conform-to/zod";
-import { useForm } from "@conform-to/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { formSchema } from "@/schema";
+import { useForm } from "@conform-to/react";
+import { parseWithZod } from "@conform-to/zod";
+import type { ActionFunctionArgs } from "@remix-run/node";
+import { json, redirect } from "@remix-run/node";
+import { Form, Link, useActionData, useNavigation } from "@remix-run/react";
 import { Resend } from "resend";
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -85,8 +85,9 @@ export default function Contact() {
         <FormMessage message={form.errors} />
         <div className="flex w-full flex-col gap-5 sm:flex-row">
           <div className="flex-grow">
-            <label>First Name</label>
+            <label htmlFor="firstName">First Name</label>
             <Input
+              id="firstName"
               type="text"
               key={fields.firstName.key}
               name={fields.firstName.name}
@@ -96,8 +97,9 @@ export default function Contact() {
             <FormMessage message={fields.firstName.errors} />
           </div>
           <div className="flex-grow">
-            <label>Last Name</label>
+            <label htmlFor="lastName">Last Name</label>
             <Input
+              id="lastName"
               type="text"
               key={fields.lastName.key}
               name={fields.lastName.name}
@@ -108,8 +110,9 @@ export default function Contact() {
           </div>
         </div>
         <div className="w-full">
-          <label>Email</label>
+          <label htmlFor="email">Email</label>
           <Input
+            id="email"
             type="email"
             key={fields.email.key}
             name={fields.email.name}
@@ -119,8 +122,9 @@ export default function Contact() {
           <FormMessage message={fields.email.errors} />
         </div>
         <div className="w-full">
-          <label>{"Affiliation (optional)"}</label>
+          <label htmlFor="affiliation">{"Affiliation (optional)"}</label>
           <Input
+            id="affiliation"
             type="text"
             key={fields.affiliation.key}
             name={fields.affiliation.name}
@@ -130,8 +134,9 @@ export default function Contact() {
           <FormMessage message={fields.affiliation.errors} />
         </div>
         <div className="w-full">
-          <label>Message</label>
+          <label htmlFor="message">Message</label>
           <Textarea
+            id="message"
             key={fields.message.key}
             name={fields.message.name}
             defaultValue={fields.message.initialValue}

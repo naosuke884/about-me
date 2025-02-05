@@ -10,18 +10,17 @@
     "start": "cross-env NODE_ENV=production node ./server.js",
     "build": "remix vite:build",
     "typecheck": "tsc -b",
-    "lint": "eslint app/",
-    "format": "prettier --write --ignore-unknown \"**/*.{ts, tsx, js, jsx}\"",
-    "fix": "eslint app/ --fix && prettier --write \"**/*.{ts, tsx, js, jsx}\"",
-    "eslint-config-prettier": "eslint-config-prettier ./eslint.config.js ",
-    "prepare": "husky"
+    "lint": "biome lint --write app/",
+    "format": "biome format --write app/",
+    "check": "biome check --write app/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "**/*.{ts, tsx, js, jsx}": "eslint --fix",
-    "**/*": "prettier --write --ignore-unknown"
+    "app/**/*.{js,jsx,ts,tsx}": [
+      "biome check --write"
+    ]
   },
   "dependencies": {
     "@conform-to/react": "^1.2.2",
@@ -54,6 +53,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.14.0",

@@ -1,4 +1,3 @@
-import { Link } from "@remix-run/react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -7,8 +6,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+import { Link } from "@remix-run/react";
 import { navItems } from "./headerNavItems";
 
 type MobileNavProps = {
