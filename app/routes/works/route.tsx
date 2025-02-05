@@ -1,7 +1,7 @@
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import WorkCard from "./WorkCard";
 import type { WorkCardProps } from "./WorkCard";
-import { useLoaderData } from "@remix-run/react";
-import { json } from "@remix-run/node";
 
 export function loader() {
   // TODO: url の OGPメタ情報から情報を取得する処理

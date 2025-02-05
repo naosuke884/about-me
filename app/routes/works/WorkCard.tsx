@@ -1,4 +1,3 @@
-import { Link } from "@remix-run/react";
 import {
   Card,
   CardContent,
@@ -7,6 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { Link } from "@remix-run/react";
 
 type WorkProps = {
   title: string;

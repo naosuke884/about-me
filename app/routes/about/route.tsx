@@ -1,6 +1,6 @@
-import { Link } from "@remix-run/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GitHubLogo, XLogo, ZennLogo } from "@/components/ui/logos";
+import { Link } from "@remix-run/react";
 import TimeLine from "./TimeLine";
 
 export default function About() {
@@ -32,7 +32,7 @@ export default function About() {
           <AvatarFallback>{"^_^"}</AvatarFallback>
         </Avatar>
         <h1>Hayashi Naoki</h1>
-        <p>{`情報系の学生です\nWebとAIに興味があります\n好きな色は青です`}</p>
+        <p>{"情報系の学生です\nWebとAIに興味があります\n好きな色は青です"}</p>
         <section className="flex flex-wrap gap-10 justify-center items-center">
           {logos.map((logo) => (
             <Link

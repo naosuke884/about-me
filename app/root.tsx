@@ -1,8 +1,7 @@
-// root.tsx
-import { Links, Meta, Outlet, Scripts } from "@remix-run/react";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
-import Header from "./Header";
 import stylesheet from "@/tailwind.css?url";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import { Links, Meta, Outlet, Scripts } from "@remix-run/react";
+import Header from "./Header";
 
 export const meta: MetaFunction = () => {
   return [
@@ -25,7 +24,7 @@ export const links: LinksFunction = () => {
 
 export default function App() {
   return (
-    <html className="dark h-full w-full">
+    <html className="dark h-full w-full" lang="ja">
       <head>
         <Meta />
         <Links />
@@ -33,11 +32,12 @@ export default function App() {
       {/* google tag >> */}
       <script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=G-FYTY7YPWLQ"
+        src={"https://www.googletagmanager.com/gtag/js?id=G-FYTY7YPWLQ"}
       />
       <script
+        // biome-ignore lint: for gtag coding
         dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
+          __html: `"window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-FYTY7YPWLQ');`,
