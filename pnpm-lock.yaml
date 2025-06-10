@@ -111,9 +111,6 @@ importers:
       '@react-router/fs-routes':
         specifier: ^7.6.0
         version: 7.6.0(@react-router/dev@7.6.0(@types/node@22.15.18)(babel-plugin-macros@3.1.0)(react-router@7.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.3)(vite@5.4.19(@types/node@22.15.18)))(typescript@5.8.3)
-      '@react-router/remix-routes-option-adapter':
-        specifier: ^7.6.0
-        version: 7.6.0(@react-router/dev@7.6.0(@types/node@22.15.18)(babel-plugin-macros@3.1.0)(react-router@7.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.3)(vite@5.4.19(@types/node@22.15.18)))(typescript@5.8.3)
       '@tsconfig/node20':
         specifier: ^20.1.5
         version: 20.1.5
@@ -1097,16 +1094,6 @@ packages:
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react-router: 7.6.0
-      typescript: ^5.1.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
-  '@react-router/remix-routes-option-adapter@7.6.0':
-    resolution: {integrity: sha512-ZJYUAuGNhGwWMntV5NR3YdrV4ugXvQFfJdTq53xlpxXS2DHyt9JFVW+3KQ+Gj4hR3rr4jJZnRlEszRLUpmAxWA==}
-    engines: {node: '>=20.0.0'}
-    peerDependencies:
-      '@react-router/dev': ^7.6.0
       typescript: ^5.1.0
     peerDependenciesMeta:
       typescript:
@@ -4590,12 +4577,6 @@ snapshots:
       source-map-support: 0.5.21
       stream-slice: 0.1.2
       undici: 6.21.3
-    optionalDependencies:
-      typescript: 5.8.3
-
-  '@react-router/remix-routes-option-adapter@7.6.0(@react-router/dev@7.6.0(@types/node@22.15.18)(babel-plugin-macros@3.1.0)(react-router@7.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.3)(vite@5.4.19(@types/node@22.15.18)))(typescript@5.8.3)':
-    dependencies:
-      '@react-router/dev': 7.6.0(@types/node@22.15.18)(babel-plugin-macros@3.1.0)(react-router@7.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.3)(vite@5.4.19(@types/node@22.15.18))
     optionalDependencies:
       typescript: 5.8.3
 

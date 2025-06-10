@@ -59,7 +59,6 @@
     "@eslint/js": "^9.26.0",
     "@react-router/dev": "^7.6.0",
     "@react-router/fs-routes": "^7.6.0",
-    "@react-router/remix-routes-option-adapter": "^7.6.0",
     "@tsconfig/node20": "^20.1.5",
     "@types/node": "^22.15.18",
     "@types/react": "^18.3.21",
