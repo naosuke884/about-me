@@ -132,3 +132,4 @@ dist
 .pnpm-store/
 build/
 .husky/
+.react-router/

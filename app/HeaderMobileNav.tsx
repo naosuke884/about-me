@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { navItems } from "./headerNavItems";
 
 type MobileNavProps = {

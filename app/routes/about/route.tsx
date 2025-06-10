@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GitHubLogo, XLogo, ZennLogo } from "@/components/ui/logos";
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import TimeLine from "./TimeLine";
 
 export default function About() {

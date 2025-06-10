@@ -1,12 +1,14 @@
-import path from "path";
-import { vitePlugin as remix } from "@remix-run/dev";
+import { reactRouter } from "@react-router/dev/vite";
 import { defineConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  plugins: [remix()],
-  resolve: {
-    alias: {
-      "@/": path.join(__dirname, "app/"),
-    },
+  server: {
+    port: 3000,
+    host: true,
   },
+  build: {
+    sourcemap: true,
+  },
+  plugins: [reactRouter(), tsconfigPaths()],
 });
