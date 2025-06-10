@@ -4,27 +4,25 @@ import { Textarea } from "@/components/ui/textarea";
 import { formSchema } from "@/schema";
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
-import type { ActionFunctionArgs } from "@remix-run/node";
-import { json, redirect } from "@remix-run/node";
-import { Form, Link, useActionData, useNavigation } from "@remix-run/react";
+import type { ActionFunctionArgs } from "react-router";
+import { redirect } from "react-router";
+import { Form, Link, useActionData, useNavigation } from "react-router";
 import { Resend } from "resend";
 
 export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
   const submission = parseWithZod(formData, { schema: formSchema });
   if (submission.status !== "success") {
-    return json(submission.reply());
+    return submission.reply();
   }
   const { firstName, lastName, email, affiliation, message } = submission.value;
   const resend = new Resend(process.env.RESEND_API_KEY);
   const to = process.env.RESEND_TO;
   if (!to) {
     console.error("RESEND_TO is not set");
-    return json(
-      submission.reply({
-        formErrors: ["Failed to send email"],
-      }),
-    );
+    return submission.reply({
+      formErrors: ["Failed to send email"],
+    });
   }
   const { data, error } = await resend.emails.send({
     from: "onboarding@resend.dev",
@@ -39,11 +37,9 @@ export async function action({ request }: ActionFunctionArgs) {
 
   if (error) {
     console.error(error);
-    return json(
-      submission.reply({
-        formErrors: ["Failed to send email"],
-      }),
-    );
+    return submission.reply({
+      formErrors: ["Failed to send email"],
+    });
   }
 
   return redirect("/contact/thanks", 303);

@@ -1,6 +1,7 @@
 import stylesheet from "@/tailwind.css?url";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
-import { Links, Meta, Outlet, Scripts } from "@remix-run/react";
+import { useEffect } from "react";
+import type { LinksFunction, MetaFunction } from "react-router";
+import { Links, Meta, Outlet, Scripts } from "react-router";
 import Header from "./Header";
 
 export const meta: MetaFunction = () => {
@@ -23,27 +24,18 @@ export const links: LinksFunction = () => {
 };
 
 export default function App() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.innerHTML =
+      "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MMWKZZ22');";
+    document.head.appendChild(script);
+  }, []);
   return (
     <html className="dark h-full w-full" lang="ja">
       <head>
         <Meta />
         <Links />
       </head>
-      {/* google tag >> */}
-      <script
-        async
-        src={"https://www.googletagmanager.com/gtag/js?id=G-FYTY7YPWLQ"}
-      />
-      <script
-        // biome-ignore lint: for gtag coding
-        dangerouslySetInnerHTML={{
-          __html: `"window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FYTY7YPWLQ');`,
-        }}
-      />
-      {/* << google tag */}
       <body className="h-full w-full bg-black text-foreground">
         <Header />
         <Outlet />

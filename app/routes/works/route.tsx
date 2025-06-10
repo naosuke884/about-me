@@ -1,5 +1,4 @@
-import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "react-router";
 import WorkCard from "./WorkCard";
 import type { WorkCardProps } from "./WorkCard";
 
@@ -57,7 +56,7 @@ export function loader() {
   //   },
   // ];
   const cardProps: WorkCardProps[] = [];
-  return json(cardProps);
+  return cardProps;
 }
 
 export default function Works() {

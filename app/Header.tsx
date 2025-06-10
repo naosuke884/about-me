@@ -5,7 +5,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import { Link, useLocation } from "@remix-run/react";
+import { Link, useLocation } from "react-router";
 import MobileNav from "./HeaderMobileNav";
 import { navItems } from "./headerNavItems";
 

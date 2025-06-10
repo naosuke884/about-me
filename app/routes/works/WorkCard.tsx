@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 
 type WorkProps = {
   title: string;
