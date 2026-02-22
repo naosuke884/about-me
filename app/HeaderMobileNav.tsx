@@ -9,7 +9,7 @@ import {
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router";
-import { navItems } from "./headerNavItems";
+import { navItems } from "./HeaderNavItems";
 
 type MobileNavProps = {
   className: string;
