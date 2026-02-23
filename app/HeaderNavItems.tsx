@@ -6,5 +6,4 @@ export type NavItem = {
 
 export const navItems: NavItem[] = [
   { key: "about", text: "About", url: "/about" },
-  { key: "works", text: "Works", url: "/works" },
 ];
